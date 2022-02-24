@@ -1,0 +1,12 @@
+Map<String, List<String>> separateScript(String script) {
+  assert (script != null);
+  Map<String, List<String>> map = new HashMap<>();
+  for (String line : script.split("\n")) {
+    String oneLine[] = line.split(":");
+    String characters = oneLine[0].trim();
+    List<String> arrayString = new ArrayList<>();
+      arrayString.add(oneLine[1].trim());
+    map.put(characters, arrayString);
+  }
+  return map;
+}
